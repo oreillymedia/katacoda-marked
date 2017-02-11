@@ -1,0 +1,12 @@
+Regular text.
+
+///
+file block on the first line
+///
+	
+Regular text.
+
+///
+   file block with leading spaces
+   and multiple lines
+///
