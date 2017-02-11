@@ -2,7 +2,9 @@
 
 `code with an attribute`{{lang}}
 
-`code with an attribute`{{execute}} in the same line as another `code block`
+`code with an attribute`{{execute}} in the same line as another `code block` followed by `UI`{{ui test}} or `copy`{{copy}}
+
+`code with an attribute with additional info`{{execute EXTRA}}
 
 Fix for backticks within HTML tag: <span attr='`ticks`'>like this</span>
 
