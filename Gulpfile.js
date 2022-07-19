@@ -1,22 +1,27 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
+const { src, dest } = require('gulp');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 
-var preserveFirstComment = function() {
-  var set = false;
+const preserveFirstComment = () => {
+  let set = false;
 
-  return function() {
-     if (set) return false;
-     set = true;
-     return true;
+  return () => {
+    if (set) {
+      return false;
+    }
+    set = true;
+    return true;
   };
 };
 
-gulp.task('uglify', function() {
-  gulp.src('lib/marked.js')
-    .pipe(uglify({preserveComments: preserveFirstComment()}))
+exports.default = () => {
+  return src('lib/marked.js')
+    .pipe(uglify({
+      output: {
+        comments: preserveFirstComment(),
+      },
+    }))
     .pipe(concat('marked.min.js'))
-    .pipe(gulp.dest('.'));
-});
+    .pipe(dest('.'))
+};
 
-gulp.task('default', ['uglify']);
