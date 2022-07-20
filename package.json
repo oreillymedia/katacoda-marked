@@ -13,6 +13,9 @@
   "license": "MIT",
   "keywords": ["markdown", "markup", "html"],
   "tags": ["markdown", "markup", "html"],
+  "overrides": {
+    "glob-parent": "^6.0.2"
+  },
   "devDependencies": {
     "markdown": "*",
     "showdown": "*",
